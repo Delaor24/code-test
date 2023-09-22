@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Transaction extends Model {
+    use HasFactory;
+
+    // fee rate (%)
+    public static $individual_rate = 0.015;
+    public static $business_rate = 0.025;
+
+    protected $fillable = [
+        'user_id',
+        'transaction_type',
+        "amount",
+        "fee",
+        'date',
+    ];
+}
